@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
-import './NewTodo.css';
+import './App.css';
 
 class NewTodo extends Component {
+  constructor(props){
+    super(props)
+  }
   render() {
     return (
         <div id="addthing">
-        <form id="input">
-          <input id="newtodo" type="text" />
+        <form id="input" onSubmit={this.props.addTodo}>
+          <input id="newtodo" type="text" value={this.props.input} onChange={this.props.onChange}/>
           <input id="newbtn" type="submit" value="+ add todo"/>
         </form>
         </div>
